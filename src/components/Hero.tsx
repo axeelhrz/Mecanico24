@@ -9,10 +9,20 @@ export function Hero() {
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setOffset(Math.min(window.scrollY, 420));
+    const onScroll = () => {
+      if (window.innerWidth < 768) {
+        setOffset(0);
+        return;
+      }
+      setOffset(Math.min(window.scrollY, 420));
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -37,12 +47,12 @@ export function Hero() {
       </div>
 
       <div
-        className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-28 pt-28 sm:px-6 sm:pb-24 lg:px-8 lg:pb-28"
-        style={{ transform: `translateY(${offset * -0.08}px)` }}
+        className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-32 pt-24 sm:px-6 sm:pb-24 sm:pt-28 lg:px-8 lg:pb-28"
+        style={{ transform: offset ? `translateY(${offset * -0.08}px)` : undefined }}
       >
-        <div className="grid items-end gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.75fr)] lg:gap-12">
+        <div className="grid items-end gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.75fr)] lg:gap-12">
           <div>
-            <div className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-line bg-carbon/40 px-3 py-1.5 backdrop-blur-sm">
+            <div className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-line bg-carbon/70 px-3 py-1.5">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inset-0 animate-ping rounded-full bg-green/70" />
                 <span className="relative h-2 w-2 rounded-full bg-green" />
@@ -52,26 +62,26 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="animate-fade-up-1 mt-6 max-w-3xl font-display text-[clamp(2.5rem,6.2vw,4.85rem)] font-semibold leading-[0.98] tracking-tight text-warm">
+            <h1 className="animate-fade-up-1 mt-5 max-w-3xl font-display text-[clamp(2.15rem,9vw,4.85rem)] font-semibold leading-[1.02] tracking-tight text-warm sm:mt-6">
               Mecánica cuando la necesitás.
               <span className="mt-1 block text-amber text-shimmer">
                 Las 24 horas.
               </span>
             </h1>
 
-            <p className="animate-fade-up-2 mt-5 max-w-lg text-base leading-relaxed text-muted sm:text-lg">
+            <p className="animate-fade-up-2 mt-4 max-w-lg text-[15px] leading-relaxed text-muted sm:mt-5 sm:text-lg">
               Diagnóstico y reparación rápida. Escribinos o llamá: te
               atendemos de día, de noche y los feriados.
             </p>
 
-            <div className="animate-fade-up-3 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="animate-fade-up-3 mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
               <a
                 href={whatsappUrl(
                   "Hola, necesito asistencia mecánica. ¿Me pueden ayudar?",
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-4 text-base font-semibold text-carbon hover:bg-amber-deep"
+                className="btn inline-flex w-full items-center justify-center gap-2 rounded-full bg-amber px-7 py-4 text-base font-semibold text-carbon hover:bg-amber-deep sm:w-auto"
               >
                 <IconWhatsApp className="h-5 w-5" />
                 WhatsApp ahora
@@ -79,39 +89,43 @@ export function Hero() {
               </a>
               <a
                 href={telUrl()}
-                className="btn inline-flex items-center justify-center gap-2 rounded-full border border-warm/20 bg-warm/5 px-7 py-4 text-base font-medium text-warm hover:border-warm/40 hover:bg-warm/10"
+                className="btn inline-flex w-full items-center justify-center gap-2 rounded-full border border-warm/20 bg-carbon/60 px-7 py-4 text-base font-medium text-warm hover:border-warm/40 sm:w-auto"
               >
                 <IconPhone className="h-4 w-4 text-amber" />
                 Llamar {site.phoneDisplay}
               </a>
             </div>
 
-            <ul className="animate-fade-up-3 mt-10 flex max-w-2xl flex-col gap-4 border-t border-line/80 pt-7 sm:flex-row sm:items-stretch sm:gap-0">
+            <ul className="animate-fade-up-3 mt-8 grid grid-cols-3 gap-3 border-t border-line/80 pt-6 sm:mt-10 sm:flex sm:max-w-2xl sm:gap-0 sm:pt-7">
               <li className="sm:flex-1 sm:pr-6">
-                <p className="font-display text-2xl font-semibold text-warm sm:text-[1.75rem]">
+                <p className="font-display text-xl font-semibold text-warm sm:text-[1.75rem]">
                   24/7
                 </p>
-                <p className="mt-1 text-sm text-muted">Disponibles siempre</p>
+                <p className="mt-1 text-[11px] leading-snug text-muted sm:text-sm">
+                  Disponibles siempre
+                </p>
               </li>
               <li className="sm:flex-1 sm:border-l sm:border-line/80 sm:px-6">
-                <p className="font-display text-2xl font-semibold text-warm sm:text-[1.75rem]">
+                <p className="font-display text-xl font-semibold text-warm sm:text-[1.75rem]">
                   {site.rating.toFixed(1)}
-                  <span className="ml-1 text-amber">★★★★★</span>
+                  <span className="ml-0.5 text-amber sm:ml-1">★★★★★</span>
                 </p>
-                <p className="mt-1 text-sm text-muted">
-                  {site.reviewCount} reseñas en Google
+                <p className="mt-1 text-[11px] leading-snug text-muted sm:text-sm">
+                  {site.reviewCount} reseñas
                 </p>
               </li>
               <li className="sm:flex-1 sm:border-l sm:border-line/80 sm:pl-6">
-                <p className="font-display text-2xl font-semibold text-warm sm:text-[1.75rem]">
+                <p className="font-display text-xl font-semibold text-warm sm:text-[1.75rem]">
                   Local
                 </p>
-                <p className="mt-1 text-sm text-muted">Montevideo, Uruguay</p>
+                <p className="mt-1 text-[11px] leading-snug text-muted sm:text-sm">
+                  Montevideo
+                </p>
               </li>
             </ul>
           </div>
 
-          <aside className="animate-fade-up-3 interactive-panel w-full justify-self-start overflow-hidden rounded-2xl border border-amber/25 bg-graphite/90 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-md lg:justify-self-end">
+          <aside className="animate-fade-up-3 interactive-panel w-full justify-self-start overflow-hidden rounded-2xl border border-amber/30 bg-graphite shadow-[0_20px_50px_rgba(0,0,0,0.35)] lg:justify-self-end">
             <div className="border-b border-line bg-amber/10 px-5 py-3.5 sm:px-6">
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2 w-2">

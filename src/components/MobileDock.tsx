@@ -3,7 +3,7 @@ import { telUrl, whatsappUrl } from "@/lib/site";
 
 export function MobileDock() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-carbon/95 p-2 backdrop-blur-xl md:hidden pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+    <div className="mobile-dock fixed inset-x-0 bottom-0 z-50 border-t border-line bg-carbon p-2 md:hidden pb-[max(0.5rem,env(safe-area-inset-bottom))]">
       <div className="grid grid-cols-2 gap-2">
         <a
           href={telUrl()}

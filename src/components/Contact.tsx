@@ -123,7 +123,7 @@ export function Contact() {
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-carbon/55 to-transparent" />
 
             <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-5 sm:w-[280px]">
-              <div className="rounded-2xl border border-line bg-carbon/90 p-4 shadow-[0_16px_40px_rgba(0,0,0,0.45)] backdrop-blur-md">
+              <div className="rounded-2xl border border-line bg-carbon p-4 shadow-[0_16px_40px_rgba(0,0,0,0.45)]">
                 <div className="flex items-center gap-2">
                   <span className="pulse-dot h-2 w-2 rounded-full bg-green" />
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
