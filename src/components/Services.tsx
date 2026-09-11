@@ -12,12 +12,12 @@ export function Services() {
               Servicios
             </p>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-warm sm:text-4xl md:text-5xl">
-              Lo resolvemos para que vuelvas a circular.
-            </h2>
+            Lo resolvemos para que vuelvas a circular.
+          </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-muted md:text-right">
-            Contanos qué le pasa al auto. Te orientamos al instante y
-            coordinamos la solución más rápida.
+            En Taller 2001 trabajamos mecánica general, diagnóstico y
+            mantenimiento con atención directa.
           </p>
         </div>
 

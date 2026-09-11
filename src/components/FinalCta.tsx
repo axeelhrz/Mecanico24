@@ -23,25 +23,23 @@ export function FinalCta() {
           <div className="inline-flex items-center gap-2 rounded-full border border-line bg-carbon/50 px-3 py-1.5 backdrop-blur-sm">
             <span className="pulse-dot h-2 w-2 rounded-full bg-green" />
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-warm/90">
-              Abiertos ahora · 24 horas
+              {site.hoursShort}
             </span>
           </div>
 
           <h2 className="mt-6 font-display text-[clamp(2.3rem,5.5vw,4.25rem)] font-semibold leading-[1.02] tracking-tight text-warm">
-            Cuando el auto falla,
-            <span className="block text-amber">nosotros respondemos.</span>
+            Tu auto en buenas manos.
+            <span className="block text-amber">Taller 2001.</span>
           </h2>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-            No esperes al lunes. Escribinos ahora y te ayudamos a resolverlo
-            desde Montevideo, a cualquier hora.
+            Escribinos o llamá para consultar. Estamos en García de Zúñiga 2376,
+            Montevideo.
           </p>
 
           <div className="mt-9">
             <a
-              href={whatsappUrl(
-                "Hola, necesito asistencia mecánica ahora.",
-              )}
+              href={whatsappUrl("Hola, quiero contactar a Taller 2001.")}
               target="_blank"
               rel="noopener noreferrer"
               className="btn inline-flex items-center justify-center gap-2 rounded-full bg-amber px-7 py-4 text-base font-semibold text-carbon hover:bg-amber-deep"
@@ -59,6 +57,13 @@ export function FinalCta() {
               className="font-medium text-warm transition hover:text-amber"
             >
               {site.phoneDisplay}
+            </a>
+            {" · "}
+            <a
+              href={`tel:${site.phoneSecondaryTel}`}
+              className="font-medium text-warm transition hover:text-amber"
+            >
+              {site.phoneSecondaryDisplay}
             </a>
           </p>
         </div>

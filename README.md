@@ -1,6 +1,15 @@
-# Mecánica 24 Horas
+# Taller 2001
 
-Sitio web premium del taller **Mecánica 24 Horas** en Montevideo, Uruguay.
+Sitio web del taller mecánico **Taller 2001** en Montevideo, Uruguay.
+
+## Datos del negocio
+
+- Dirección: Ing. Eduardo García de Zúñiga 2376, 11300 Montevideo
+- Teléfono: 092 837 737 · Fijo: 2710 0602
+- Horario: Lun–Jue 09:00–18:00 · Vie 09:00–17:00
+- Google: 5,0 ★ · 5 reseñas
+
+Editá `src/lib/site.ts` para actualizar textos y contactos.
 
 ## Desarrollo
 
@@ -8,17 +17,6 @@ Sitio web premium del taller **Mecánica 24 Horas** en Montevideo, Uruguay.
 npm install
 npm run dev
 ```
-
-Abrí [http://localhost:3000](http://localhost:3000).
-
-## Datos editables
-
-Todo el contenido comercial está en `src/lib/site.ts`:
-
-- Teléfono / WhatsApp: `097 249 759`
-- Rating y cantidad de reseñas
-- Servicios (marcá `editable: true` si aún no está confirmado)
-- Reseñas individuales: agregá objetos reales en `reviews` para mostrar cards
 
 ## Build
 

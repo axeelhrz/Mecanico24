@@ -17,15 +17,16 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} · Mecánica 24 horas en Montevideo`,
+    default: `${site.name} · Taller mecánico en Montevideo`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   keywords: [
-    "mecánica 24 horas",
+    "Taller 2001",
     "taller mecánico Montevideo",
-    "emergencia mecánica",
-    "auxilio automotriz",
+    "mecánica automotriz",
+    "García de Zúñiga",
+    "reparación de autos",
   ],
   openGraph: {
     title: `${site.name} · Montevideo`,
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     locale: "es_UY",
     type: "website",
   },
-  metadataBase: new URL("https://mecanica24horas.uy"),
+  metadataBase: new URL("https://taller2001.uy"),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -20,16 +20,16 @@ export function Emergency() {
         <div className="reveal grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-carbon/55">
-              Emergencias · 24 horas
+              Cómo trabajamos
             </p>
             <h2 className="mt-4 font-display text-[clamp(2.4rem,5.5vw,4.5rem)] font-semibold leading-[0.98] tracking-tight">
-              ¿El auto te dejó
-              <span className="block">en el camino?</span>
+              Del mensaje
+              <span className="block">a la solución.</span>
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-carbon/75 sm:text-lg lg:justify-self-end lg:text-right">
-            No hace falta explicar mil cosas. En dos mensajes te orientamos y
-            arrancamos a resolverlo.
+            Un proceso simple: nos contás qué pasa, coordinamos el ingreso y te
+            devolvemos el auto en condiciones.
           </p>
         </div>
 
@@ -63,10 +63,10 @@ export function Emergency() {
         <div className="reveal mt-12 flex flex-col gap-5 rounded-2xl bg-carbon p-6 text-warm sm:flex-row sm:items-center sm:justify-between sm:p-8">
           <div>
             <p className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-              Estamos disponibles ahora.
+              ¿Querés traer el auto?
             </p>
             <p className="mt-2 text-sm text-muted sm:text-base">
-              O llamá al{" "}
+              Escribinos o llamá al{" "}
               <a href={telUrl()} className="text-warm transition hover:text-amber">
                 {site.phoneDisplay}
               </a>
@@ -74,14 +74,14 @@ export function Emergency() {
           </div>
           <a
             href={whatsappUrl(
-              "Hola, el auto me dejó tirado. Necesito asistencia ahora. Estoy en:",
+              "Hola, quiero agendar una visita en Taller 2001.",
             )}
             target="_blank"
             rel="noopener noreferrer"
             className="btn inline-flex items-center justify-center gap-2 rounded-full bg-amber px-6 py-3.5 text-sm font-semibold text-carbon hover:bg-amber-deep"
           >
             <IconWhatsApp className="h-4 w-4" />
-            Pedir asistencia
+            Agendar por WhatsApp
             <IconArrow className="h-4 w-4" />
           </a>
         </div>

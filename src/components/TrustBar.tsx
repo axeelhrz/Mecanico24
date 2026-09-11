@@ -9,10 +9,10 @@ import {
 import { site } from "@/lib/site";
 
 const items = [
-  { icon: IconClock, label: "Disponible las 24 horas" },
-  { icon: IconPin, label: "Atención en Montevideo" },
   { icon: IconStar, label: `${site.rating.toFixed(1)} ★ en Google` },
-  { icon: IconZap, label: "Respuesta rápida" },
+  { icon: IconPin, label: site.addressShort },
+  { icon: IconClock, label: site.hoursShort },
+  { icon: IconZap, label: "Atención directa" },
 ];
 
 export function TrustBar() {

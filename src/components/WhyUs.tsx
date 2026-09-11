@@ -13,7 +13,7 @@ export function WhyUs() {
               Por qué elegirnos
             </p>
             <h2 className="mt-4 max-w-2xl font-display text-[clamp(2.1rem,4.8vw,3.75rem)] font-semibold leading-[1.02] tracking-tight text-warm">
-              Necesitás una solución.
+              Necesitás un taller de confianza.
               <span className="block text-muted">No una vuelta más.</span>
             </h2>
           </div>

@@ -1,5 +1,5 @@
 import { IconArrow, IconPhone, IconPin, IconWhatsApp } from "@/components/Icons";
-import { site, telUrl, whatsappUrl } from "@/lib/site";
+import { site, telSecondaryUrl, telUrl, whatsappUrl } from "@/lib/site";
 
 export function Contact() {
   return (
@@ -8,23 +8,22 @@ export function Contact() {
         <div className="reveal grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-amber">
-              Contacto inmediato
+              Contacto
             </p>
             <h2 className="mt-3 font-display text-[clamp(2.2rem,5vw,3.75rem)] font-semibold leading-[1.02] tracking-tight text-warm">
-              Contanos qué le pasa
-              <span className="block text-muted">al auto.</span>
+              Escribinos o
+              <span className="block text-muted">pasá por el taller.</span>
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-muted lg:justify-self-end lg:text-right">
-            Estamos disponibles las 24 horas. Elegí WhatsApp o llamada: en
-            segundos alguien te atiende.
+            {site.hours}. Estamos en {site.addressShort}.
           </p>
         </div>
 
         <div className="reveal mt-10 grid gap-4 lg:grid-cols-2">
           <a
             href={whatsappUrl(
-              "Hola, necesito ayuda con el auto. El problema es:",
+              "Hola, quiero consultar por el taller. El problema es:",
             )}
             target="_blank"
             rel="noopener noreferrer"
@@ -45,8 +44,7 @@ export function Contact() {
                   WhatsApp
                 </h3>
                 <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted">
-                  Mandanos el problema y tu zona. Te respondemos al momento,
-                  las 24 horas.
+                  Mandanos el problema del auto y te respondemos para coordinar.
                 </p>
               </div>
               <span className="card-arrow mt-8 inline-flex items-center gap-2 text-sm font-semibold text-amber">
@@ -56,10 +54,7 @@ export function Contact() {
             </div>
           </a>
 
-          <a
-            href={telUrl()}
-            className="card-hover group relative overflow-hidden rounded-3xl border border-line bg-carbon p-7 sm:p-8"
-          >
+          <div className="card-hover group relative overflow-hidden rounded-3xl border border-line bg-carbon p-7 sm:p-8">
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-warm/[0.04] blur-2xl" />
             <div className="relative flex h-full min-h-[230px] flex-col justify-between">
               <div>
@@ -67,21 +62,30 @@ export function Contact() {
                   <IconPhone className="h-5 w-5" />
                 </div>
                 <h3 className="mt-7 font-display text-3xl font-semibold tracking-tight text-warm">
-                  Llamar
+                  Teléfonos
                 </h3>
-                <p className="mt-3 font-display text-3xl font-semibold tracking-tight text-warm sm:text-4xl">
+                <a
+                  href={telUrl()}
+                  className="mt-3 block font-display text-3xl font-semibold tracking-tight text-warm transition hover:text-amber sm:text-4xl"
+                >
                   {site.phoneDisplay}
-                </p>
-                <p className="mt-2 text-sm text-muted">
-                  Línea directa · Montevideo · 24 horas
-                </p>
+                </a>
+                <a
+                  href={telSecondaryUrl()}
+                  className="mt-2 block text-lg text-muted transition hover:text-amber"
+                >
+                  Fijo: {site.phoneSecondaryDisplay}
+                </a>
               </div>
-              <span className="card-arrow mt-8 inline-flex items-center gap-2 text-sm font-semibold text-amber">
+              <a
+                href={telUrl()}
+                className="card-arrow mt-8 inline-flex items-center gap-2 text-sm font-semibold text-amber"
+              >
                 Llamar ahora
                 <IconArrow className="h-4 w-4" />
-              </span>
+              </a>
             </div>
-          </a>
+          </div>
         </div>
 
         <div className="reveal mt-4 overflow-hidden rounded-3xl border border-line bg-carbon">
@@ -92,11 +96,9 @@ export function Contact() {
               </div>
               <div>
                 <p className="font-display text-lg font-semibold text-warm">
-                  Ubicación en Montevideo
+                  {site.name}
                 </p>
-                <p className="mt-0.5 text-sm text-muted">
-                  {site.address} · Atención 24 horas
-                </p>
+                <p className="mt-0.5 text-sm text-muted">{site.address}</p>
               </div>
             </div>
             <a
@@ -112,7 +114,7 @@ export function Contact() {
 
           <div className="relative">
             <iframe
-              title="Ubicación de Mecánica 24 Horas en Google Maps"
+              title="Ubicación de Taller 2001 en Google Maps"
               src={site.mapsEmbed}
               className="h-[300px] w-full sm:h-[420px]"
               loading="lazy"
@@ -124,14 +126,11 @@ export function Contact() {
 
             <div className="absolute bottom-4 left-4 right-4 sm:left-auto sm:right-5 sm:w-[280px]">
               <div className="rounded-2xl border border-line bg-carbon p-4 shadow-[0_16px_40px_rgba(0,0,0,0.45)]">
-                <div className="flex items-center gap-2">
-                  <span className="pulse-dot h-2 w-2 rounded-full bg-green" />
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
-                    Abiertos ahora
-                  </p>
-                </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-amber">
+                  {site.hoursShort}
+                </p>
                 <p className="mt-2 font-display text-lg font-semibold text-warm">
-                  Mecánica 24 Horas
+                  {site.name}
                 </p>
                 <p className="mt-1 text-xs text-muted">
                   {site.lat.toFixed(4)}° · {site.lng.toFixed(4)}°

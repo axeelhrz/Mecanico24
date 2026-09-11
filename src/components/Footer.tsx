@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site, telUrl, whatsappUrl } from "@/lib/site";
 
 const links = [
@@ -12,20 +13,27 @@ export function Footer() {
     <footer className="border-t border-line bg-carbon">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.2fr_1fr_1fr] lg:px-8">
         <div>
-          <p className="font-display text-xl font-semibold text-warm">
-            Mecánica <span className="text-amber">24</span> Horas
-          </p>
-          <p className="mt-2 text-sm text-muted">
-            {site.city}, {site.country}
-          </p>
-          <p className="mt-6 text-sm text-muted">
-            Teléfono / WhatsApp
-          </p>
+          <Image
+            src="/images/logo-taller-2001-light.png"
+            alt="Taller 2001"
+            width={200}
+            height={75}
+            className="h-12 w-auto"
+          />
+          <p className="mt-3 text-sm text-muted">{site.tagline}</p>
+          <p className="mt-4 text-sm text-muted">{site.address}</p>
+          <p className="mt-6 text-sm text-muted">Teléfono / WhatsApp</p>
           <a
             href={telUrl()}
             className="mt-1 block font-display text-lg text-warm transition hover:text-amber"
           >
             {site.whatsappDisplay}
+          </a>
+          <a
+            href={`tel:${site.phoneSecondaryTel}`}
+            className="mt-1 block text-sm text-muted transition hover:text-amber"
+          >
+            Fijo: {site.phoneSecondaryDisplay}
           </a>
         </div>
 
@@ -48,11 +56,16 @@ export function Footer() {
 
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Disponibilidad
+            Horario
           </p>
-          <p className="mt-4 text-sm text-warm">
-            Atención 24 horas · 365 días
-          </p>
+          <ul className="mt-4 space-y-2 text-sm text-warm">
+            {site.hoursDetail.map((item) => (
+              <li key={item.day} className="flex justify-between gap-4">
+                <span className="text-muted">{item.day}</span>
+                <span>{item.time}</span>
+              </li>
+            ))}
+          </ul>
           <a
             href={whatsappUrl()}
             target="_blank"

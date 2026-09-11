@@ -1,28 +1,37 @@
 export const site = {
-  name: "Mecánica 24 Horas",
-  shortName: "M24H",
-  tagline: "Servicio mecánico disponible las 24 horas en Montevideo",
+  name: "Taller 2001",
+  shortName: "T2001",
+  tagline: "Taller mecánico en Montevideo",
   description:
-    "Mecánica 24 Horas en Montevideo: atención mecánica rápida, diagnóstico y emergencias las 24 horas, los 365 días del año.",
+    "Taller 2001 en Montevideo: mecánica general, diagnóstico y mantenimiento de automóviles. Ing. Eduardo García de Zúñiga 2376.",
   city: "Montevideo",
   country: "Uruguay",
-  phoneDisplay: "097 249 759",
-  phoneTel: "+59897249759",
-  whatsapp: "59897249759",
-  whatsappDisplay: "+598 97 249 759",
-  address: "Montevideo, Uruguay",
-  lat: -34.899701,
-  lng: -56.1689637,
+  phoneDisplay: "092 837 737",
+  phoneTel: "+59892837737",
+  phoneSecondaryDisplay: "2710 0602",
+  phoneSecondaryTel: "+59827100602",
+  whatsapp: "59892837737",
+  whatsappDisplay: "+598 92 837 737",
+  address: "Ing. Eduardo García de Zúñiga 2376, 11300 Montevideo, Uruguay",
+  addressShort: "García de Zúñiga 2376, Montevideo",
+  lat: -34.91855,
+  lng: -56.16171,
   mapsUrl:
-    "https://www.google.com/maps/place/Mec%C3%A1nica+24+horas/@-34.899701,-56.1689637,17z",
+    "https://www.google.com/maps/place/Taller+2001/@-34.9185324,-56.1616847,17z",
   mapsEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.5!2d-56.1689637!3d-34.899701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81cf4a433e2b%3A0xc2d613a716125a57!2sMec%C3%A1nica%2024%20horas!5e0!3m2!1ses!2suy!4v1700000000000!5m2!1ses!2suy",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.8!2d-56.1616847!3d-34.9185324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f8155da30e633%3A0xdddbf699e2136f4c!2sTaller%202001!5e0!3m2!1ses!2suy!4v1700000000000!5m2!1ses!2suy",
   googleReviewsUrl:
-    "https://www.google.com/maps/place/Mec%C3%A1nica+24+horas/@-34.899701,-56.1689637,17z",
+    "https://www.google.com/maps/place/Taller+2001/@-34.9185324,-56.1616847,17z",
   rating: 5.0,
-  reviewCount: 27,
-  hours: "Disponible ahora · 24 horas",
-  /** Completar con reseñas reales de Google cuando estén disponibles */
+  reviewCount: 5,
+  hours: "Lun–Jue 09:00–18:00 · Vie 09:00–17:00",
+  hoursShort: "Lun a Vie · horario comercial",
+  hoursDetail: [
+    { day: "Lunes a jueves", time: "09:00 – 18:00" },
+    { day: "Viernes", time: "09:00 – 17:00" },
+    { day: "Sábado", time: "Cerrado" },
+    { day: "Domingo", time: "Cerrado" },
+  ],
   reviews: [] as ReadonlyArray<{
     name: string;
     initial: string;
@@ -33,90 +42,90 @@ export const site = {
     {
       id: "mecanica",
       title: "Mecánica general",
-      text: "Desde ruidos raros hasta fallas de circulación: revisamos y reparamos para que vuelvas a la ruta.",
+      text: "Reparaciones y ajustes para que tu vehículo vuelva a circular con seguridad.",
     },
     {
       id: "diagnostico",
       title: "Diagnóstico de fallas",
-      text: "Escaneamos y detectamos el origen del problema antes de tocar una pieza.",
+      text: "Identificamos el origen del problema antes de definir la reparación.",
     },
     {
       id: "arranque",
-      title: "No arranca",
-      text: "Si el auto no prende, queda en neutro o falla al intentar arrancar, te asistimos.",
+      title: "Problemas de arranque",
+      text: "Si el auto no prende o falla al intentar arrancar, lo revisamos a fondo.",
     },
     {
       id: "bateria",
       title: "Batería y carga",
-      text: "Batería descargada, alternador o problemas de arranque eléctrico: solución rápida.",
+      text: "Batería, alternador y sistema de carga: diagnóstico y solución.",
     },
     {
       id: "frenos",
       title: "Frenos",
-      text: "Pastillas, discos y sistema de frenos. Prioridad absoluta: tu seguridad.",
+      text: "Pastillas, discos y sistema de frenos con foco en tu seguridad.",
     },
     {
       id: "motor",
       title: "Motor",
-      text: "Pérdida de potencia, humo, sobrecalentamiento o fallas intermitentes del motor.",
+      text: "Pérdida de potencia, ruidos, sobrecalentamiento y fallas de motor.",
     },
     {
       id: "electrica",
       title: "Electricidad",
-      text: "Luces, sensores, cableado y fallas eléctricas que dejan el vehículo fuera de servicio.",
+      text: "Luces, sensores, cableado y fallas eléctricas del vehículo.",
     },
     {
       id: "mantenimiento",
       title: "Mantenimiento",
-      text: "Service, aceite, filtros y revisiones preventivas para evitar que te deje a pie.",
+      text: "Service, aceite, filtros y revisiones preventivas programadas.",
     },
     {
       id: "emergencias",
-      title: "Emergencias 24 h",
-      text: "Avería de madrugada, feriado o domingo: estamos disponibles cuando hace falta.",
+      title: "Reparaciones urgentes",
+      text: "Priorizamos trabajos urgentes dentro del horario de atención.",
     },
   ],
   whyUs: [
     {
       code: "01",
-      stat: "24/7",
-      title: "Siempre abiertos",
-      text: "De madrugada, domingo o feriado: si el auto falla, hay alguien del otro lado.",
+      stat: "5.0",
+      title: "Excelente reputación",
+      text: "Calificación perfecta en Google: confianza ganada trabajo a trabajo.",
     },
     {
       code: "02",
-      stat: "Directo",
-      title: "Sin intermediarios",
-      text: "Hablás con quien puede ayudarte. Respuestas claras, sin dar vueltas ni transferencias.",
+      stat: "Local",
+      title: "Atención directa",
+      text: "Hablás con el taller. Respuestas claras, sin vueltas ni intermediarios.",
     },
     {
       code: "03",
       stat: "Antes",
       title: "Primero diagnosticamos",
-      text: "Entendemos qué pasa y te explicamos las opciones antes de definir cómo seguir.",
+      text: "Evaluamos el problema y te explicamos las opciones antes de avanzar.",
     },
     {
       code: "04",
-      stat: "5.0",
-      title: "Confianza local",
-      text: "Negocio de Montevideo con valoración perfecta en Google y atención de cerca.",
+      stat: "MVD",
+      title: "En Montevideo",
+      text: "Estamos en García de Zúñiga 2376, fáciles de ubicar y de contactar.",
     },
   ],
   emergencySteps: [
     {
       step: "01",
-      title: "Nos escribís",
-      text: "Decinos qué le pasa al auto: no arranca, se detuvo, hace ruido, se calentó…",
+      title: "Nos contás",
+      text: "Escribinos o llamá y contanos qué le pasa al auto.",
     },
     {
       step: "02",
-      title: "Indicás dónde estás",
-      text: "Barrio, ruta o punto de referencia. Con eso evaluamos cómo ayudarte más rápido.",
+      title: "Agendamos",
+      text: "Coordinamos el ingreso al taller según urgencia y disponibilidad.",
     },
     {
       step: "03",
-      title: "Te damos una salida",
-      text: "Te decimos qué hacer y coordinamos la asistencia según tu situación.",
+      title: "Lo resolvemos",
+      text: "Diagnosticamos, te informamos y reparamos para que vuelvas a circular.",
     },
   ],
 } as const;
@@ -124,10 +133,14 @@ export const site = {
 export function whatsappUrl(message?: string) {
   const text =
     message ??
-    "Hola, necesito asistencia mecánica. ¿Me pueden ayudar?";
+    "Hola, quiero consultar por el taller. ¿Me pueden ayudar?";
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
 export function telUrl() {
   return `tel:${site.phoneTel}`;
+}
+
+export function telSecondaryUrl() {
+  return `tel:${site.phoneSecondaryTel}`;
 }

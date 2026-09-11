@@ -4,16 +4,16 @@ import { site } from "@/lib/site";
 
 const highlights = [
   {
-    title: "Disponibilidad real",
-    text: "Respondemos cuando otros talleres ya cerraron: de noche, domingo o feriado.",
+    title: "Buenas valoraciones",
+    text: "5,0 estrellas en Google: reputación construida con trabajos bien hechos.",
   },
   {
     title: "Atención clara",
-    text: "Te explicamos el problema y cómo seguir, sin rodeos ni demoras innecesarias.",
+    text: "Te explicamos el problema y cómo seguir, sin rodeos.",
   },
   {
-    title: "Negocio local",
-    text: "Taller de Montevideo con reputación construida trabajo a trabajo.",
+    title: "Ubicación cómoda",
+    text: "García de Zúñiga 2376, Montevideo. Fácil de llegar y de contactar.",
   },
 ];
 

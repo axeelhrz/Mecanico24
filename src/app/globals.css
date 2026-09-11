@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --carbon: #070b12;
-  --graphite: #101722;
-  --warm: #eef2f6;
-  --muted: #8b97a8;
-  --amber: #ff7a3d;
-  --amber-deep: #e85f22;
-  --line: rgba(238, 242, 246, 0.1);
-  --line-dark: rgba(7, 11, 18, 0.1);
-  --green: #3ecf8e;
+  /* Taller 2001 — negro + verde lima del logo */
+  --carbon: #080c12;
+  --graphite: #111820;
+  --warm: #f1f4f8;
+  --muted: #8b96a6;
+  --amber: #c9d15c;
+  --amber-deep: #b0b84a;
+  --line: rgba(241, 244, 248, 0.1);
+  --line-dark: rgba(8, 12, 18, 0.1);
+  --green: #4ade80;
   --background: var(--carbon);
   --foreground: var(--warm);
 }
@@ -46,7 +47,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--amber) 45%, transparent);
+  background: color-mix(in srgb, var(--amber) 40%, transparent);
   color: var(--carbon);
 }
 
@@ -77,12 +78,18 @@ body {
   }
 }
 
-@keyframes hero-ken {
-  from {
-    transform: scale(1.06);
+@keyframes hero-drift {
+  0% {
+    transform: scale(1.14) translate3d(0, 0, 0);
   }
-  to {
-    transform: scale(1);
+  33% {
+    transform: scale(1.2) translate3d(-2.4%, -1.2%, 0);
+  }
+  66% {
+    transform: scale(1.18) translate3d(1.8%, -2%, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(0, 0, 0);
   }
 }
 
@@ -102,8 +109,9 @@ body {
   animation: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
 }
 
-.hero-zoom {
-  animation: hero-ken 10s ease-out forwards;
+.hero-drift {
+  animation: hero-drift 32s ease-in-out infinite;
+  will-change: transform;
 }
 
 .pulse-dot {
@@ -148,8 +156,8 @@ body {
 }
 
 .card-hover:hover {
-  border-color: rgba(255, 122, 61, 0.35);
-  background-color: rgba(255, 122, 61, 0.05);
+  border-color: rgba(201, 209, 92, 0.45);
+  background-color: rgba(201, 209, 92, 0.06);
   transform: translateY(-2px);
 }
 
@@ -178,7 +186,7 @@ body {
   inset: 0;
   background: radial-gradient(
     420px circle at var(--spot-x) var(--spot-y),
-    rgba(255, 122, 61, 0.16),
+    rgba(201, 209, 92, 0.16),
     transparent 42%
   );
   opacity: 0;
@@ -198,15 +206,15 @@ body {
 .text-shimmer {
   background: linear-gradient(
     100deg,
-    var(--amber) 20%,
-    #ffd0b5 45%,
-    var(--amber) 70%
+    var(--amber) 15%,
+    #eef3a8 45%,
+    var(--amber) 75%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shimmer-text 4.5s linear infinite;
+  animation: shimmer-text 5s linear infinite;
 }
 
 @keyframes shimmer-text {
@@ -241,7 +249,7 @@ body {
 
 .interactive-panel:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 122, 61, 0.45);
+  border-color: rgba(201, 209, 92, 0.5);
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
 }
 
@@ -261,8 +269,12 @@ body {
   }
 }
 
+.year-mark {
+  letter-spacing: 0.08em;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-zoom,
+  .hero-drift,
   .animate-fade-up,
   .animate-fade-up-1,
   .animate-fade-up-2,
